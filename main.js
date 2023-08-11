@@ -45,7 +45,7 @@ es <imc> donde <imc> es el índice de masa corporal calculado redondeado con dos
 let peso = prompt('CALCULO DE IMC\nIngrese su peso (en kg): ');
 let estatura = prompt('Ingrese su estatuta (en metros): ');
 
-let calculoImc = (peso / Math.pow(estatura, 2)).toFixed(1);
+let calculoImc = Number((peso / Math.pow(estatura, 2)).toFixed(2));
 console.log(calculoImc); 
 
 /*
@@ -53,7 +53,12 @@ console.log(calculoImc);
 da un cociente <c> y un resto <r> donde <n> y <m> son los números introducidos por el usuario, y <c>
 y <r> son el cociente y el resto de la división entera respectivamente.
 */
+let n = prompt('Ingrese el divisor: ');
+let m = prompt('Ingrese el dividendo: ');;
+let c = Number(Math.trunc(n / m));
+let r = n % m;
 
+alert(`División: ${n} / ${m}\nCociente: ${c}\nResto: ${r}`);
 
 
 
@@ -73,9 +78,6 @@ let capitalObtenido = montoInversion * interesAnual;
 
 console.log(`${montoInversion} ${interesAnual} ${tiempoInversion} ${capitalObtenido}`);
 alert(`Monto invertido: $${montoInversion}\nPlazo: ${tiempoInversion} año(s)\nCapital obtenido: ${capitalObtenido}`);
-
-
-
 
 
 /*
