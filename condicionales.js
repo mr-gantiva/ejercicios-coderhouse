@@ -69,6 +69,19 @@ al usuario su edad y sus ingresos mensuales y muestre por pantalla si el usuario
 que tributar o no.
 */
 
+let edadTributar = prompt("Ingresar edad");
+let ingresoMensual = prompt("Indique sus ingresos mensuales");
+
+if (isNaN(edadTributar) || isNaN(ingresoMensual)) {
+  alert("Valores ingresados no validos");
+} else {
+  if (edadTributar > 16 && ingresoMensual > 1000) {
+    alert("Debe tributar impuestos, realicelo pronto para evitar sanciones");
+  } else {
+    alert("No debe tributar impuesto, edad o ingreso menor al requerido");
+  }
+}
+
 /*
 6. Los alumnos de un curso se han dividido en dos grupos A y B de acuerdo al sexo y el
 nombre. El grupo A esta formado por las mujeres con un nombre anterior a la M y los
@@ -76,6 +89,20 @@ hombres con un nombre posterior a la N y el grupo B por el resto. Escribir un pr
 que pregunte al usuario su nombre y sexo, y muestre por pantalla el grupo que le
 corresponde.
 */
+
+let nombreAlumno = prompt("Ingrese su nombre");
+let sexoAlumno = prompt("Ingrese su sexo\n1 - Mujer\n2 - Hombre");
+
+for (let i = 0; i < nombreAlumno.length; i++) {
+  const letra = nombreAlumno.charAt(0);
+  console.log(letra);
+}
+
+if ((letra < "M" && sexoAlumno == 1) || (letra > "N" && sexoAlumno == 2)) {
+  alert("Perteneces al grupo A");
+} else {
+  alert("Perteneces al grupo B");
+}
 
 /*
 7. Los tramos impositivos para la declaración de la renta en un determinado país son los

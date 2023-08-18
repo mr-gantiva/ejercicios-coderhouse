@@ -74,11 +74,8 @@ let montoInversion = consultaInvertir;
 let interesAnual = consultaInteresAnual / 100;
 let tiempoInversion = cantidadAnhos;
 
-let capitalObtenido = montoInversion * interesAnual;
+let capitalObtenido = montoInversion * interesAnual * tiempoInversion;
 
-console.log(
-  `${montoInversion} ${interesAnual} ${tiempoInversion} ${capitalObtenido}`
-);
 alert(
   `Monto invertido: $${montoInversion}\nPlazo: ${tiempoInversion} año(s)\nCapital obtenido: ${capitalObtenido}`
 );
@@ -116,9 +113,12 @@ let descuento = 60;
 let cantidadBarrasVendidas = prompt(
   "Ingresar cantidad de barras de pan del día anterior vendidas: "
 );
+
+let totalSinDescuento = precioBarrasPan * cantidadBarrasVendidas;
+
 let costeTotal = (
-  precioBarrasPan -
-  precioBarrasPan * (descuento / 100)
+  totalSinDescuento -
+  totalSinDescuento * (descuento / 100)
 ).toFixed(2);
 alert(
   `Cantidad de barras: ${cantidadBarrasVendidas} Precio normal: ${precioBarrasPan}\nDescuento aplicado ${descuento}%\nValor a pagar: ${costeTotal}`
