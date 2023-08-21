@@ -13,16 +13,26 @@ for (let i = 0; i < 10; i++) {
 2. Escribir un programa que pregunte al usuario su edad y muestre por
 pantalla todos los años que ha cumplido (desde 1 hasta su edad).*/
 
+/*
 let consultaEdad = Number(prompt("Ingrese su edad"));
 
 for (let i = 0; i < consultaEdad; i++) {
   console.log(i + 1);
-}
+}*/
 
 /*
 3. Escribir un programa que pida al usuario un número entero positivo y
 muestre por pantalla todos los números desde 1 hasta ese número
 separados por comas.*/
+
+let numEntero = Number(prompt("Ingrese un número entero:"));
+let numeros = "";
+
+for (let i = 0; i < numEntero; i++) {
+  numeros += i + ",";
+}
+
+console.log(numeros);
 
 /*
 4. Escribir un programa que pida al usuario un número entero positivo y
