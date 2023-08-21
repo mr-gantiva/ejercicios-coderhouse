@@ -90,15 +90,20 @@ que pregunte al usuario su nombre y sexo, y muestre por pantalla el grupo que le
 corresponde.
 */
 
-let nombreAlumno = prompt("Ingrese su nombre");
-let sexoAlumno = prompt("Ingrese su sexo\n1 - Mujer\n2 - Hombre");
-
+let nombreAlumno = prompt("Ingrese su nombre").toLowerCase();
+let sexoAlumno = Number(
+  prompt("Ingrese su sexo\n1 - Mujer\n2 - Hombre").toLowerCase()
+);
+/*
 for (let i = 0; i < nombreAlumno.length; i++) {
   const letra = nombreAlumno.charAt(0);
   console.log(letra);
-}
+}*/
 
-if ((letra < "M" && sexoAlumno == 1) || (letra > "N" && sexoAlumno == 2)) {
+if (
+  (nombreAlumno < "M" && sexoAlumno == 1) ||
+  (nombreAlumno > "N" && sexoAlumno == 2)
+) {
   alert("Perteneces al grupo A");
 } else {
   alert("Perteneces al grupo B");
@@ -126,6 +131,24 @@ Escribir un programa que pregunte al usuario su renta anual y muestre por pantal
 tipo impositivo que le corresponde.
 */
 
+let rentaAnual = Number(prompt("Indique su renta anual: "));
+
+if (!isNaN(rentaAnual)) {
+  if (rentaAnual < 10000) {
+    alert(`La renta por ${rentaAnual} € tiene un tipo impositivo del 5%`);
+  } else if (rentaAnual > 10000 && rentaAnual <= 20000) {
+    alert(`La renta por ${rentaAnual} € tiene un tipo impositivo del 15%`);
+  } else if (rentaAnual > 20000 && rentaAnual <= 35000) {
+    alert(`La renta por ${rentaAnual} € tiene un tipo impositivo del 20%`);
+  } else if (rentaAnual > 35000 && rentaAnual <= 60000) {
+    alert(`La renta por ${rentaAnual} € tiene un tipo impositivo del 30%`);
+  } else {
+    alert(`La renta por ${rentaAnual} € tiene un tipo impositivo del 45%`);
+  }
+} else {
+  alert("Valor ingresado no es númerico");
+}
+
 /*
 8. Escribir un programa para una empresa que tiene salas de juegos para todas las
 edades y quiere calcular de forma automática el precio que debe cobrar a sus clientes
@@ -134,3 +157,24 @@ precio de la entrada. Si el cliente es menor de 4 años puede entrar gratis, si 
 4 y 12 años debe pagar 5€, si tiene entre 13 y 17 debe pagar 8€ y si es mayor de 18
 años, 10€.
 */
+
+let edadTickets = Number(prompt("Ingrese su edad:"));
+/*
+< 4 = entra gratis
+>= 4 && < = 12 = paga 5 €
+>= 13 && <= 17 = paga 8 €
+>18 = paga 10 €
+*/
+if (!isNaN(edadTickets)) {
+  if (edadTickets < 4) {
+    alert("No debe pagar entra gratis");
+  } else if (edadTickets >= 4 && edadTickets <= 12) {
+    alert("Debe pagar 5€");
+  } else if (edadTickets >= 13 && edadTickets <= 17) {
+    alert("Debe pagar 8€");
+  } else {
+    alert("Debe pagar 10€");
+  }
+} else {
+  alert("Valor ingresado no es númerico");
+}
