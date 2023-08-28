@@ -97,16 +97,24 @@ function saludoNombre(nombre) {
 
 // calculoAreaCirculo(perimetroCirculo, radioCirculo);
 let radioCirculo = parseFloat(prompt("Ingrese el radio del circulo"));
+
 function calculoAreaCirculo(radio) {
-  const calculoPi = 3.1416;
-  let areaCirculo = calculoPi * Math.pow(radioCirculo, 2);
-  alert(`El área del circulo es: ${areaCirculo.toFixed(2)}`);
+  return Math.PI * Math.pow(radio, 2);
 }
 
-function calculoAreaCilindro(areaCirculo) {
-  let alturaCilindro = parseFloat(prompt("Ingrese altura del cilindro"));
-  let areaCilindro = calculoAreaCirculo(areaCirculo) * alturaCilindro;
-  alert(`El volumen del cilindro es: ${areaCilindro}`);
+alert(`El área del circulo es: ${calculoAreaCirculo(radioCirculo).toFixed(2)}`);
+
+let alturaCilindro = parseFloat(prompt("Ingrese la altura del cilindro"));
+
+function calculoAreaCilindro(radio, altura) {
+  const areaBase = calculoAreaCirculo(radio);
+  const volumen = areaBase * altura;
+  return volumen;
 }
 
-calculoAreaCilindro();
+alert(
+  `El volumen del cilindro es: ${calculoAreaCilindro(
+    radioCirculo,
+    alturaCilindro
+  ).toFixed(2)}`
+);
