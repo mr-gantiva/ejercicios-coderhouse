@@ -41,8 +41,11 @@ separados por comas.*/
 let numConteo = Number(prompt("Ingrese un número entero:"));
 let num = "";
 
-for (let i = numConteo; i >= 1; i--) {
-  num = num + i + ",";
+for (let i = numConteo; i >= 0; i--) {
+  num = num + i;
+  if (i !== 1) {
+    num += ",";
+  }
 }
 console.log(num);
 */
