@@ -53,3 +53,11 @@ let productos = [
 productos.forEach((producto) => {
   console.log(producto.nombre);
 });
+
+const cursos = [
+  {
+    nombre: "Javascript",
+    precio: 15000,
+  },
+  { nombre: "React JS", precio: 22000 },
+];
