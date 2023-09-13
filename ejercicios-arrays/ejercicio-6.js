@@ -10,24 +10,29 @@ const asignaturas = [
   "Química",
   "Historia",
   "Lengua",
-  "Quimica",
+  "Computación",
 ];
 
-const aprobadas = [];
-const perdidas = [];
-const calificaciones = [];
+const asignaturasARepetir = [];
+const arrayNotas = [];
 
-function solicitarNotasAlUsuario() {
-  for (let i = 0; i < asignaturas.length; i++) {
-    let consultaNota = Number(
-      prompt(`Ingrese la calificación de   ${asignaturas[i].toUpperCase()}  :`)
-    );
+for (let i = 0; i < asignaturas.length; i++) {
+  const nota = parseFloat(prompt(`Ingrese la nota de ${asignaturas[i]}`));
 
-    // console.log(ASIGNATURAS[i]);
-    console.log(
-      `En la asignatura ${asignaturas[i]} has sacado ${calificaciones[i]}`
-    );
+  arrayNotas[asignaturas[i]] = nota;
+
+  if (nota < 4) {
+    asignaturasARepetir.push(asignaturas[i]);
   }
 }
+console.log(asignaturasARepetir);
+console.log(arrayNotas);
 
-solicitarNotasAlUsuario();
+if (asignaturasARepetir.length === 0) {
+  console.log(`¡Felicidades! Has aprobado todas las asignaturas`);
+} else {
+  console.log(`Debes repetir las siguientes asignaturas: `);
+  for (let i = 0; i < asignaturasARepetir.length; i++) {
+    console.log(asignaturasARepetir[i], arrayNotas[asignaturas]);
+  }
+}
