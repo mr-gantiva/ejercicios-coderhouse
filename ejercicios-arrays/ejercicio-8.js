@@ -1,48 +1,48 @@
 // 8. Escribir un programa que pida al usuario una lista de letras y muestre por pantalla
 // el número de veces que ingresó cada vocal.
 
-let vocales = ["a", "e", "i", "o", "u"];
-let contador = 0;
-let contadorE = 0;
-let contadorI = 0;
-let contadorO = 0;
-let contadorU = 0;
-let contadorOpcion = 0;
+// let vocales = ["a", "e", "i", "o", "u"];
+// let contador = 0;
+// let contadorE = 0;
+// let contadorI = 0;
+// let contadorO = 0;
+// let contadorU = 0;
+// let contadorOpcion = 0;
 
-let consultaLetra = [];
-let opcion;
-do {
-  let ingresoLetra = prompt("Ingrese la letra:").toLowerCase();
-  opcion = Number(prompt("Desea ingresar otra letra 1 - SI 0 - NO"));
-  consultaLetra.push(ingresoLetra);
-  contadorOpcion += 1;
-} while (opcion === 1);
+// let consultaLetra = [];
+// let opcion;
+// do {
+//   let ingresoLetra = prompt("Ingrese la letra:").toLowerCase();
+//   opcion = Number(prompt("Desea ingresar otra letra 1 - SI 0 - NO"));
+//   consultaLetra.push(ingresoLetra);
+//   contadorOpcion += 1;
+// } while (opcion === 1);
 
-console.log(consultaLetra + " Contador " + contadorOpcion);
+// console.log(consultaLetra + " Contador " + contadorOpcion);
 
-for (let i = 0; i < consultaLetra.length; i++) {
-  console.log(consultaLetra[i]);
-  if (consultaLetra[i] === vocales[0]) {
-    console.log(`Si esta la vocal ${vocales[0]}`);
-    contador += 1;
-  } else if (consultaLetra[i] === vocales[1]) {
-    console.log(`Si esta la vocal ${vocales[1]}`);
-    contadorE += 1;
-  } else if (consultaLetra[i] === vocales[2]) {
-    console.log(`Si esta la vocal ${vocales[2]}`);
-    contadorI += 1;
-  } else if (consultaLetra[i] === vocales[3]) {
-    console.log(`Si esta la vocal ${vocales[3]}`);
-    contadorO += 1;
-  } else if (consultaLetra[i] === vocales[4]) {
-    console.log(`Si esta la vocal ${vocales[4]}`);
-    contadorU += 1;
-  }
-}
+// for (let i = 0; i < consultaLetra.length; i++) {
+//   console.log(consultaLetra[i]);
+//   if (consultaLetra[i] === vocales[0]) {
+//     console.log(`Si esta la vocal ${vocales[0]}`);
+//     contador += 1;
+//   } else if (consultaLetra[i] === vocales[1]) {
+//     console.log(`Si esta la vocal ${vocales[1]}`);
+//     contadorE += 1;
+//   } else if (consultaLetra[i] === vocales[2]) {
+//     console.log(`Si esta la vocal ${vocales[2]}`);
+//     contadorI += 1;
+//   } else if (consultaLetra[i] === vocales[3]) {
+//     console.log(`Si esta la vocal ${vocales[3]}`);
+//     contadorO += 1;
+//   } else if (consultaLetra[i] === vocales[4]) {
+//     console.log(`Si esta la vocal ${vocales[4]}`);
+//     contadorU += 1;
+//   }
+// }
 
-console.log(
-  `Vocal ${vocales[0]} ingresada ${contador} veces\nVocal ${vocales[1]} ingresada ${contadorE} veces\nVocal ${vocales[2]} ingresada ${contadorI} veces\nVocal ${vocales[3]} ingresada ${contadorO} veces\nVocal ${vocales[4]} ingresada ${contadorU} veces`
-);
+// console.log(
+//   `Vocal ${vocales[0]} ingresada ${contador} veces\nVocal ${vocales[1]} ingresada ${contadorE} veces\nVocal ${vocales[2]} ingresada ${contadorI} veces\nVocal ${vocales[3]} ingresada ${contadorO} veces\nVocal ${vocales[4]} ingresada ${contadorU} veces`
+// );
 
 const vocalesArray = ["a", "e", "i", "o", "u"];
 const contadorVocales = {};
@@ -56,7 +56,7 @@ do {
       contadorVocales[ingresoLetra]++;
     }
   }
-  let opcionContinuar = Number(
+  var opcionContinuar = Number(
     prompt("Desea ingresar otra letra?\n1 - SI\n0 - NO")
   );
 } while (opcionContinuar === 1);
@@ -67,20 +67,18 @@ for (const vocal in contadorVocales) {
   console.log(`Vocal ${vocal} ingresada ${contadorVocales[vocal]} veces`);
 }
 
+// Esta parte del código maneja la lógica para contar cuántas veces se ha ingresado cada vocal en un bucle do...while:
 
-
-Esta parte del código maneja la lógica para contar cuántas veces se ha ingresado cada vocal en un bucle do...while:
-
-javascript
-Copy code
-const ingresoLetra = prompt("Ingrese una letra:").toLowerCase();
-if (vocales.includes(ingresoLetra)) {
-  if (!contadorVocales[ingresoLetra]) {
-    contadorVocales[ingresoLetra] = 1;
-  } else {
-    contadorVocales[ingresoLetra]++;
-  }
-}
+// javascript
+// Copy code
+// const ingresoLetra = prompt("Ingrese una letra:").toLowerCase();
+// if (vocales.includes(ingresoLetra)) {
+//   if (!contadorVocales[ingresoLetra]) {
+//     contadorVocales[ingresoLetra] = 1;
+//   } else {
+//     contadorVocales[ingresoLetra]++;
+//   }
+// }
 
 // Vamos a desglosar qué hace cada parte:
 
@@ -99,9 +97,3 @@ if (vocales.includes(ingresoLetra)) {
 
 // En resumen, esta parte del código se encarga de procesar la entrada del usuario, verificar si es una vocal válida, y llevar un registro
 //  de cuántas veces se ha ingresado cada vocal válida en el objeto contadorVocales.
-
-
-
-
-
-
